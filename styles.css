@@ -1008,9 +1008,9 @@ footer {
 .about-media {
   grid-column: 1;
   grid-row: 2;
-  align-self: center;
+  align-self: start;
   width: min(100%, 280px);
-  overflow: hidden;
+  margin-top: 60px;
   border-radius: 18px;
 }
 
@@ -1019,6 +1019,25 @@ footer {
   width: 100%;
   height: auto;
   object-fit: contain;
+}
+
+.cv-button {
+  display: block;
+  width: fit-content;
+  margin: 18px auto 0;
+  padding: 12px 18px;
+  border: 1px solid var(--lime);
+  color: var(--lime);
+  font-family: "DM Mono", monospace;
+  font-size: 11px;
+  text-align: center;
+  transition: background-color .25s ease, color .25s ease;
+}
+
+.cv-button:hover,
+.cv-button:focus-visible {
+  background: var(--lime);
+  color: var(--bg);
 }
 
 #about .resume-content {
@@ -1231,6 +1250,7 @@ footer {
   #about .about-media {
     width: 100%;
     max-width: 420px;
+    margin-top: 0;
   }
 
   .software-card {
