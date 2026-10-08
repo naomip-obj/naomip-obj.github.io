@@ -1593,9 +1593,29 @@ footer {
   min-height: 0;
 }
 
+.showcase-media--environment {
+  aspect-ratio: 1;
+  min-height: 0;
+  background: var(--panel);
+}
+
+.showcase-media--environment > img {
+  object-fit: contain;
+}
+
 .showcase-media--cinematic {
   aspect-ratio: 2.15 / 1;
   min-height: 0;
+}
+
+.showcase-media--pokedex {
+  aspect-ratio: 16 / 11;
+  min-height: 0;
+  background: var(--panel);
+}
+
+.showcase-media--pokedex > video {
+  object-fit: contain;
 }
 
 .showcase-media--square {
@@ -1719,6 +1739,14 @@ footer {
   width: 86%;
 }
 
+.showcase-pair--portrait {
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+}
+
+.showcase-pair--portrait .showcase-item {
+  width: 100%;
+}
+
 .showcase-item--lower {
   margin-top: clamp(100px, 11vw, 180px);
 }
@@ -1757,6 +1785,29 @@ footer {
 
 .projects-page {
   overflow: hidden;
+}
+
+.projects-back-button {
+  margin: 12px auto clamp(80px, 10vw, 140px);
+  border-color: var(--line);
+  border-radius: 0;
+  background: transparent;
+  color: var(--soft);
+  font-family: "DM Mono", monospace;
+  font-size: 10px;
+  font-weight: 400;
+  letter-spacing: .14em;
+  box-shadow: 0 0 0 rgba(200, 255, 51, 0);
+  transition: color .25s ease, border-color .25s ease, box-shadow .25s ease, transform .25s ease;
+}
+
+.projects-back-button:hover,
+.projects-back-button:focus-visible {
+  border-color: var(--lime);
+  background: transparent;
+  color: var(--lime);
+  box-shadow: 0 0 18px rgba(200, 255, 51, .2);
+  transform: translateY(-2px);
 }
 
 /* Small hover motion for real media / placeholders */
@@ -1840,10 +1891,18 @@ footer {
     aspect-ratio: 1080 / 1920;
   }
 
+  .showcase-item--hero .showcase-media {
+    aspect-ratio: 16 / 11;
+  }
+
   .showcase-media--cinematic,
   .showcase-media--landscape,
   .showcase-media--final {
     aspect-ratio: 4 / 5;
+  }
+
+  .showcase-media--pokedex {
+    aspect-ratio: 16 / 11;
   }
 
   .showcase-media--square {
@@ -1855,10 +1914,34 @@ footer {
   }
 
   .showcase-media--full {
-    aspect-ratio: auto;
+    max-width: 100%;
+    aspect-ratio: 1080 / 1920;
   }
 
   .showcase-title h2 {
     font-size: 34px;
+  }
+}
+
+.showcase-pair--pokedex-framer {
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+}
+
+.showcase-pair--pokedex-framer .showcase-item--cinematic,
+.showcase-pair--pokedex-framer .showcase-item--final {
+  width: 100%;
+  margin-left: 0;
+  padding-top: 0;
+}
+
+.showcase-pair--pokedex-framer .showcase-media--final,
+.showcase-pair--pokedex-framer .showcase-meta--final {
+  width: 100%;
+  margin-left: 0;
+}
+
+@media (max-width: 980px) {
+  .showcase-pair--pokedex-framer {
+    grid-template-columns: 1fr;
   }
 }
